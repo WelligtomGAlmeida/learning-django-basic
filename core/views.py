@@ -2,8 +2,12 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        'course': 'Web Programming with Django Framework'
+    }
+
+    return render(request, 'index.html', context)
 
 
-def contato(request):
-    return render(request, 'contato.html')
+def contact(request):
+    return render(request, 'contact.html')
