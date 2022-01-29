@@ -6,8 +6,14 @@ class Product(models.Model):
     price = models.DecimalField('Price', decimal_places=2, max_digits=8)
     stock = models.IntegerField('Units in Stock')
 
+    def __str__(self):
+        return self.name
+
 
 class Customer(models.Model):
     name = models.CharField('Name', max_length=100)
     lastName = models.CharField('Last Name', max_length=100)
     email = models.EmailField('E-mail', max_length=100)
+
+    def __str__(self):
+        return [self.name, self.email]
